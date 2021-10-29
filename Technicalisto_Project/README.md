@@ -26,9 +26,9 @@
 
 3. Call method by your video Url & UIView
 
-    self.DisplayVideoFromUrl(myUrl: "http://techslides.com/demos/sample-videos/small.mp4", myView: videoView)
+       self.DisplayVideoFromUrl(myUrl: "http://techslides.com/demos/sample-videos/small.mp4", myView: videoView)
     
-    // Note This Url is an Example ...
+       // Note This Url is an Example ...
 
 
 ### Thanks
