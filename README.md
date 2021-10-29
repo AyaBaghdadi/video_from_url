@@ -1,13 +1,34 @@
 
 # Technicalisto
 
-## How to create horizontal CollectionView inside TableViewCell
+## How to Display Video from URL inside custom design UIView
 
-1. Create your custom design as UITableView inside it add UITableViewCell inside it add your horizontal CollectionView.
+1. Add your UIView and connect it .
 
-2. Connect your Big tableview delegate to your viewController and send data with custom cell & reload collectionView after connect.
+2. Add This method for display
 
-3. in your custom TableViewCell add delegate of collectionView and send data to custom collectionViewCell.
+    func DisplayVideoFromUrl(myUrl:String , myView:UIView) {
+        
+        let player = AVPlayer(url: URL(string: myUrl)!)
+        
+        let playerLayer = AVPlayerLayer(player: player)
+        
+        playerLayer.videoGravity = .resizeAspectFill //
+        playerLayer.needsDisplayOnBoundsChange = true //
+        playerLayer.frame = videoView.bounds // 1
+
+        myView.layer.masksToBounds = true // 2
+        myView.layer.addSublayer(playerLayer)
+        
+        player.play()
+        
+      }
+
+3. Call method by your video Url & UIView
+
+    self.DisplayVideoFromUrl(myUrl: "http://techslides.com/demos/sample-videos/small.mp4", myView: videoView)
+    
+    // Note This Url is an Example ...
 
 
 ### Thanks
